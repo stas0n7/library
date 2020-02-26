@@ -7,8 +7,12 @@
 <p>
   <strong>author:</strong>
   <% @book.authors.each do |author| %>
-    <%= author.name %>
+    <%= link_to "#{author.name}", author %>
   <% end %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @book.category.title %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

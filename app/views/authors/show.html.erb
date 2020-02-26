@@ -4,6 +4,12 @@
   <strong>Name:</strong>
   <%= @author.name %>
 </p>
+<p>
+  <strong>Books:</strong>
+  <% @author.books.each do |book| %>
+    <%= link_to "#{book.title}", book %>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
