@@ -1,0 +1,17 @@
+$(document).ready(function(){
+  $('#btn_all').click(function(){
+    $('#all').show();
+    $('#fantasy').hide();
+    $('#management').hide();
+  });
+  $('#btn_fantasy').click(function(){
+    $('#all').hide();
+    $('#fantasy').show();
+    $('#management').hide();
+  });
+  $('#btn_management').click(function(){
+    $('#all').hide();
+    $('#fantasy').hide();
+    $('#management').show();
+  });
+});

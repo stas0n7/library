@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label "Category" %>
-    <%= form.collection_select :category_id, Category.all, :id, :title %>
+    <%= form.select :category, options_for_select(['management', 'fantasy'])%>
   </div>
 
   <div class="field">
