@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+
+<p><strong>books in <%= @category.title %> category:</strong></p>
+<table width="500px">
+  <thead>
+    <tr>
+      <td>Cover</td>
+      <td>Title</td>
+      <td>Authors</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @category.books.each do |book| %>
+      <% book.authors.each do |author| %>
+        <tr>
+          <td></td>
+          <td><%= link_to "#{book.title}", book %></td>
+          <td><%= link_to "#{author.name}", author %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
+</p>
