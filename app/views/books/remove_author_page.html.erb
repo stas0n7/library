@@ -1,0 +1,5 @@
+<p><h2>Remove author from the book</h2></p>
+<%= form_with url: remove_author_book_path(@book), method: :patch do |f| %>
+  <%= f.collection_select :author_id, Author.all, :id, :name %>
+  <%= f.submit 'remove author' %>
+<% end %>
