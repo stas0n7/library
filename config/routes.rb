@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :categories
+  resources :categories do
+    get :add_book_page, on: :member
+    get :remove_book_page, on: :member
+    patch :add_book, on: :member
+    patch :remove_book, on: :member
+  end
+
   resources :books do
     patch :add_author, on: :member
     patch :remove_author, on: :member
