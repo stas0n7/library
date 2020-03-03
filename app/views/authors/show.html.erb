@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @author.name %>
-</p>
-<p>
-  <strong>Books:</strong>
-  <% @author.books.each do |book| %>
-    <%= link_to "#{book.title}", book %>
-  <% end %>
-</p>
+<h2><strong><%= @author.name %> books:</strong></h2>
+  <table style="display:inline">
+    <tbody>
+      <% @author.books.each do |book| %>
+        <td width="170px">
+          <%= image_tag book.cover_url(:standard) %>
+          <p><%= link_to "#{book.title}", book %></p>
+        </td>
+      <% end %>
+    </tbody>
+  </table>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>
