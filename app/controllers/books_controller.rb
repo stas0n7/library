@@ -20,7 +20,11 @@ class BooksController < ApplicationController
 
   def add_author
     @book.authors << Author.find(params[:author_id])
-    redirect_to books_path, notice: 'Author successfully added'
+    if @book.save
+      redirect_to books_path, notice: 'Author successfully added'
+    else
+      render :add_author_page
+    end
   end
 
   def remove_author_page

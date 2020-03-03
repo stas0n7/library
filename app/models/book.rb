@@ -7,4 +7,7 @@ class Book < ApplicationRecord
 
   validates :title, presence: true
 
+  def outside_authors
+    Author.all - authors
+  end
 end

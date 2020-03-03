@@ -1,5 +1,5 @@
 <p><h2>Add author to the book</h2></p>
 <%= form_with url: add_author_book_path(@book), method: :patch do |f| %>
-  <%= f.collection_select :author_id, Author.all, :id, :name %>
+  <%= f.collection_select :author_id, @book.outside_authors, :id, :name %>
   <%= f.submit 'Add author' %>
 <% end %>
