@@ -1,0 +1,4 @@
+<%= form_with url: add_book_category_path(@category), method: :patch do |f| %>
+  <%= f.collection_select :book_id, @category.outside_books, :id, :title %>
+  <%= f.submit "add book" %>
+<% end %>
