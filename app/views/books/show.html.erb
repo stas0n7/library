@@ -16,7 +16,7 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @book.category.title %>
+  <%= @book.category&.title %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
