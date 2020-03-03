@@ -4,6 +4,7 @@
   <strong>Title:</strong>
   <%= @book.title %>
 </p>
+<p><%= image_tag(@book.cover_url(:standard)) if @book.cover.present? %></p>
 
 <p>
   <strong>author:</strong>

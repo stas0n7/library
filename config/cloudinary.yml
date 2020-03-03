@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dz4lpj7hd
+  api_key: '942131949846367'
+  api_secret: bYUCHIPKVBl3Ew_KmsAd8VL0avs
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dz4lpj7hd
+  api_key: '942131949846367'
+  api_secret: bYUCHIPKVBl3Ew_KmsAd8VL0avs
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dz4lpj7hd
+  api_key: '942131949846367'
+  api_secret: bYUCHIPKVBl3Ew_KmsAd8VL0avs
+  enhance_image_tag: true
+  static_file_support: false

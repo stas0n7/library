@@ -3,6 +3,8 @@ class Book < ApplicationRecord
   has_many :authors, through: :authors_books
   belongs_to :category
 
+  mount_uploader :cover, CoverUploader
+
   validates :title, presence: true
 
 end
