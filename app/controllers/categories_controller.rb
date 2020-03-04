@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
   before_action :set_category, only: %i[show edit update destroy add_book_page add_book remove_book_page remove_book]
 
   # GET /categories

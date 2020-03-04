@@ -1,3 +1,5 @@
-<%= link_to 'books', books_path %> |
-<%= link_to 'authors', authors_path %>
-<p><h2><%= link_to 'categories', categories_path %></h2></p>
+<% if user_signed_in? %>
+  <%= link_to 'books', books_path %> |
+  <%= link_to 'authors', authors_path %>
+<% end %>
+<p><h2><%= link_to 'Library', categories_path %></h2></p>

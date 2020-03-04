@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  load_and_authorize_resource
   before_action :set_book, only: %i[show edit update destroy add_author_page remove_author_page add_author remove_author]
 
   def index

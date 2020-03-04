@@ -12,13 +12,15 @@
   </thead>
   <tbody>
     <% @category.books.each do |book| %>
-      <% book.authors.each do |author| %>
-        <tr>
-          <td><%= image_tag book.cover_url(:standard) %></td>
-          <td><%= link_to "#{book.title}", book %></td>
-          <td><%= link_to "#{author.name}", author %></td>
-        </tr>
-      <% end %>
+      <tr>
+        <td><%= image_tag book.cover_url(:standard) %></td>
+        <td><%= link_to "#{book.title}", book %></td>
+        <td>
+          <% book.authors.each do |author| %>
+            <%= link_to "#{author.name}", author %>
+          <% end %>
+        </td>
+      </tr>
     <% end %>
   </tbody>
 </table>
