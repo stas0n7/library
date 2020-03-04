@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <td><strong>ID</strong></td>
+      <td><strong>Users</strong></td>
+      <td><strong>Role</strong></td>
+      <td><strong>Action</strong></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
+        <td>
+          <%= form_tag edit_admin_path, method: :get do %>
+            <%= hidden_field_tag :user_id, user.id %>
+            <%= submit_tag 'edit role' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

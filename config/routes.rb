@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :admin, only: [:show, :edit, :update]
   resources :categories do
     get :add_book_page, on: :member
     get :remove_book_page, on: :member
