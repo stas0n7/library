@@ -8,6 +8,7 @@
   <strong>author:</strong>
   <% @book.authors.each do |author| %>
     <%= link_to "#{author.name}", author %>
+    <%= ',' unless @book.authors.last == author %>
   <% end %>
 </p>
 
