@@ -6,6 +6,7 @@ class Book < ApplicationRecord
   mount_uploader :cover, CoverUploader
 
   validates :title, presence: true
+  validates :cover, presence: true
 
   def outside_authors
     Author.all - authors
