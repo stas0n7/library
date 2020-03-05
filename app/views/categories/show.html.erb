@@ -1,4 +1,4 @@
-<p><strong>books in <%= @category.title %> category:</strong></p>
+<h2><strong>books in <%= @category.title %> category:</strong></h2>
 <table class='table table-hover'>
   <thead>
     <tr>
@@ -10,7 +10,7 @@
   <tbody>
     <% @category.books.each do |book| %>
       <tr>
-        <td><%= image_tag book.cover_url(:standard) %></td>
+        <td><%= image_tag book.cover_url(:small) %></td>
         <td><%= link_to "#{book.title}", book %></td>
         <td>
           <% book.authors.each do |author| %>
