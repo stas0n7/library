@@ -1,4 +1,4 @@
-<table>
+<table width='400px'>
   <thead>
     <tr>
       <td><strong>ID</strong></td>
@@ -16,7 +16,7 @@
         <td>
           <%= form_tag edit_admin_path, method: :get do %>
             <%= hidden_field_tag :user_id, user.id %>
-            <%= submit_tag 'edit role' %>
+            <%= submit_tag 'edit role', class: 'btn btn-danger' %>
           <% end %>
         </td>
       </tr>

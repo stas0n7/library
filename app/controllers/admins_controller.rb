@@ -3,7 +3,12 @@ class AdminsController < ApplicationController
   before_action :set_user, except: :show
   before_action :admin_check
   def show
-    @users = User.all
+    ## show users except current admin. His can't change own role
+    @users = []
+    User.all.each do |user|
+      @users << user
+    end
+    @users.delete current_user
   end
 
   def edit

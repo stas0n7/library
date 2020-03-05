@@ -1,6 +1,6 @@
 <h1>Books</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Cover</th>
@@ -18,18 +18,17 @@
         <td><%= book.title %></td>
         <td>
           <% book.authors.each do |author| %>
-            <ul>
-              <%= author.name %>
-            </ul>
+            <%= author.name %>
+            <%= ',' if author != book.authors.last %>
           <% end %>
         </td>
         <td><%= book.category&.title %></td>
-        <td><%= link_to 'Show', book %></td>
+        <td><%= link_to 'Show', book, class: 'btn btn-info' %></td>
           <% if can? :manage, Book %>
-            <td><%= link_to 'Edit', edit_book_path(book) %></td>
-            <td><%= link_to 'Add author', add_author_page_book_path(book) %></td>
-            <td><%= link_to 'Remove author', remove_author_page_book_path(book) %></td>
-            <td><%= link_to 'Delete book', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_book_path(book), class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Add author', add_author_page_book_path(book), class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Remove author', remove_author_page_book_path(book), class: 'btn btn-danger' %></td>
+            <td><%= link_to 'Delete book', book, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% end %>
       </tr>
     <% end %>
@@ -38,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Book', new_book_path if can? :manage, Book%>
+<%= link_to 'New Book', new_book_path, class: 'btn btn-primary' if can? :manage, Book%>

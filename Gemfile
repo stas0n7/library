@@ -30,8 +30,16 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'carrierwave', '~> 2.0'
 gem 'cloudinary'
-gem 'devise'
+
 gem 'cancancan'
+gem 'devise'
+
+
+gem 'bootstrap', '~> 4.4.1'
+gem 'mini_racer'
+gem 'rails_12factor'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
