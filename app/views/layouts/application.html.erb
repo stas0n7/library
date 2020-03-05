@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <%= link_to 'back to main page', root_path, class: 'btn btn-success' %>
     <center>
       <p id="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
@@ -29,8 +30,7 @@
       </div>
 
       <%= yield %>
-      <br><br>
-      <p><%= link_to 'back to main page', root_path %></p>
+
     </center>
   </body>
 </html>
