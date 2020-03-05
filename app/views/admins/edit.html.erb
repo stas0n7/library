@@ -1,0 +1,6 @@
+<%= form_with url: admin_path(@user), method: :patch do |f| %>
+  <%= @user.email %>
+  <%= f.select :role, options_for_select(['admin_book', 'admin_category', 'user', 'admin']) %>
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.submit 'edit' %>
+<% end %>
