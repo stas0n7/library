@@ -1,6 +1,6 @@
 <h1>Categories</h1>
 
-<table width="700px">
+<table width="600px">
   <thead>
     <tr>
       <th width='100px'>Title</th>
@@ -31,7 +31,6 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Category', new_category_path if can? :manage, Category %>
