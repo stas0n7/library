@@ -1,12 +1,16 @@
 <h2><strong><%= @author.name %> books:</strong></h2>
-  <table style="display:inline" class='table table-hover'>
-    <tbody>
-      <% @author.books.each do |book| %>
-        <td width="170px">
-          <%= image_tag book.cover_url(:standard) %>
-          <p><%= link_to "#{book.title}", book %></p>
-        </td>
-      <% end %>
-    </tbody>
-  </table>
-<p><%= link_to 'Back', authors_path %></p>
+<table style="display:inline">
+  <tbody>
+    <% @author.books.each do |book| %>
+      <td width="170px">
+        <%= image_tag book.cover_url(:standard) %>
+        <p><%= link_to "#{book.title}", book %></p>
+      </td>
+    <% end %>
+  </tbody>
+</table>
+<% if user_signed_in? %>
+  <p><%= link_to 'Back', authors_path %></p>
+<% else %>
+  <p><%= link_to 'Back', 'javascript:history.back()' %></p>
+<% end %>
