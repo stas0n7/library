@@ -1,19 +1,7 @@
-<%= form_with(model: author, local: true) do |form| %>
-  <% if author.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(author.errors.count, "error") %> prohibited this author from being saved:</h2>
+<%= simple_form_for author do |form| %>
 
-      <ul>
-        <% author.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: 'form-control col-3' %>
+  <div class="field col-3">
+    <%= form.input :name %>
   </div>
   <br>
   <div class="actions">
