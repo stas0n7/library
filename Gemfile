@@ -39,7 +39,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'mini_racer'
 gem 'rails_12factor'
 
-
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

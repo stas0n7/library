@@ -1,25 +1,13 @@
 <h1>Editing Book</h1>
 
-<%= form_with(model: @book, local: true) do |form| %>
-  <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<%= simple_form_for @book do |form| %>
 
-      <ul>
-        <% @book.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control col-3' %>
+  <div class="field col-3">
+    <%= form.input :title %>
   </div>
   <br>
-  <div class="field">
-    <%= form.file_field :cover %>
+  <div class="field col-4">
+    <%= form.input :cover %>
   </div>
   <br>
   <div class="actions">
