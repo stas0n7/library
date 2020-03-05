@@ -25,12 +25,12 @@
       </div>
       <br>
       <div align='left'>
-        <%= link_to 'Admin management', admin_path if user_signed_in?%>
+        <%= link_to 'Admin management', admin_path, class: "btn btn-danger" if user_signed_in?%>
       </div>
 
       <%= yield %>
       <br><br>
-      <p><%= link_to 'main', root_path %></p>
+      <p><%= link_to 'back to main page', root_path %></p>
     </center>
   </body>
 </html>

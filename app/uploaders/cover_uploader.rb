@@ -16,7 +16,7 @@ class CoverUploader < CarrierWave::Uploader::Base
   end
 
   version :small do
-    resize_to_fit(100, 100)
+    resize_to_fit(70, 110)
   end
 
 

@@ -1,5 +1,5 @@
 <p><strong>books in <%= @category.title %> category:</strong></p>
-<table width="500px">
+<table class='table table-hover'>
   <thead>
     <tr>
       <td>Cover</td>
@@ -15,6 +15,7 @@
         <td>
           <% book.authors.each do |author| %>
             <%= link_to "#{author.name}", author %>
+            <%= ',' unless book.authors.last == author %>
           <% end %>
         </td>
       </tr>

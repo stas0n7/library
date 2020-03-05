@@ -1,6 +1,6 @@
 <h1>Authors</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,15 +15,14 @@
         <td><%= author.name %></td>
         <td>
           <% author.books.each do |book| %>
-            <ul>
-              <%= book.title %>
-            </ul>
+            <%= book.title %>
+            <%= ',' if book != author.books.last %>
           <% end %>
         </td>
-        <td><%= link_to 'Show', author %></td>
+        <td><%= link_to 'Show', author, class: 'btn btn-info' %></td>
           <% if can? :manage, Author %>
-            <td><%= link_to 'Edit', edit_author_path(author) %></td>
-            <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_author_path(author), class: 'btn btn-primary' %></td>
+            <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
           <% end %>
       </tr>
     <% end %>
@@ -32,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Author', new_author_path if can? :manage, Author %>
+<%= link_to 'New Author', new_author_path, class: 'btn btn-primary' if can? :manage, Author %>

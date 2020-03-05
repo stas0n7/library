@@ -1,4 +1,5 @@
 <%= form_with url: add_book_category_path(@category), method: :patch do |f| %>
-  <%= f.collection_select :book_id, @category.outside_books, :id, :title %>
-  <%= f.submit "add book" %>
+  <%= f.collection_select :book_id, @category.outside_books, :id, :title,{}, class: 'form-control col-3' %>
+  <br>
+  <%= f.submit "add book", class: 'btn btn-primary' %>
 <% end %>

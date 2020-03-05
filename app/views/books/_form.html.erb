@@ -13,24 +13,24 @@
 
   <div class="field">
     <%= form.label "authors" %>
-    <%= form.select :author_ids, Author.all.map { |author| [author.name, author.id] }, {}, multiple: true %>
+    <%= form.select :author_ids, Author.all.map { |author| [author.name, author.id] }, {}, multiple: true, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
     <%= form.label "Category" %>
-    <%= form.collection_select :category_id, Category.all, :id, :title %>
+    <%= form.collection_select :category_id, Category.all, :id, :title,{}, class: 'form-control col-3' %>
   </div>
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control col-3' %>
   </div>
-
+  <br>
   <div class="field">
-    <%= form.file_field :cover %>
+    <%= form.file_field :cover, class: '' %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

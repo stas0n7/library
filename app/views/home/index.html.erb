@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
-  <%= link_to 'books', books_path %> |
-  <%= link_to 'authors', authors_path %>
+  <%= link_to 'books', books_path, class: "btn btn-secondary" %>
+  <%= link_to 'authors', authors_path, class: "btn btn-secondary" %>
 <% end %>
 <br><br>
-<p><h2><%= link_to 'Library', categories_path %></h2></p>
+<p><h2><%= link_to 'Library', categories_path, class: 'btn btn-primary btn-lg col-3' %></h2></p>
