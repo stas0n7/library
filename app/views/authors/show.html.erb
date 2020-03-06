@@ -9,8 +9,4 @@
     <% end %>
   </tbody>
 </table>
-<% if user_signed_in? %>
-  <p><%= link_to 'Back', authors_path %></p>
-<% else %>
-  <p><%= link_to 'Back', 'javascript:history.back()' %></p>
-<% end %>
+<p><%= link_to 'Back', 'javascript:history.back()' %></p>

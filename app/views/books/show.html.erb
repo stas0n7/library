@@ -17,8 +17,5 @@
   <strong>Category:</strong>
   <%= @book.category&.title %>
 </p>
-<% if user_signed_in? %>
-  <%= link_to 'Back', books_path %>
-<% else %>
-  <%= link_to 'Back', 'javascript:history.back()' %>
-<% end %>
+<%= link_to 'Back', 'javascript:history.back()' %>
+
