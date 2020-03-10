@@ -6,6 +6,7 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :cover, presence: true
   validates :title, uniqueness: true
+  validates :title, length: { maximum: 50 }
 
   mount_uploader :cover, CoverUploader
 
