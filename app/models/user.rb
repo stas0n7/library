@@ -10,6 +10,7 @@ class User < ApplicationRecord
     list do
       field :id
       field :role
+      field :email
       field :created_at
     end
   end
