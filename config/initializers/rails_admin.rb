@@ -26,6 +26,8 @@ RailsAdmin.config do |config|
     redirect_to main_app.root_path, alert: 'only main admin has access to this page ' unless user_signed_in? && current_user.role == 'admin'
   end
 
+  config.excluded_models = ["AuthorsBook"]
+
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory

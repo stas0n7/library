@@ -1,5 +1,5 @@
 class AuthorsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
   before_action :set_author, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -40,7 +40,7 @@ class AuthorsController < ApplicationController
 
   private
     def set_author
-      @author = Author.find(params[:id])
+      @author = Author.friendly.find(params[:id])
     end
 
     def author_params
