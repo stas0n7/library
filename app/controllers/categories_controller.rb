@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  load_and_authorize_resource find_by: :slug
+  load_and_authorize_resource
   before_action :set_category, only: %i[show edit update destroy add_book_page add_book remove_book_page remove_book]
 
   def index
@@ -59,7 +59,7 @@ class CategoriesController < ApplicationController
   private
 
   def set_category
-    @category = Category.friendly.find(params[:id])
+    @category = Category.find(params[:id])
   end
 
   def category_params
