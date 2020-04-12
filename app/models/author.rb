@@ -1,5 +1,4 @@
 class Author < ApplicationRecord
-  extend FriendlyId
 
   has_many :authors_books
   has_many :books, through: :authors_books
@@ -7,8 +6,6 @@ class Author < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
   validates :name, length: { maximum: 50 }
-
-  friendly_id :name, use: :slugged
 
   rails_admin do
     list do
