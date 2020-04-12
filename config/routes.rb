@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/lbr_admin', as: 'rails_admin'
   devise_for :users
   resource :admin, only: [:show, :edit, :update]
   resources :categories do
