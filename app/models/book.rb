@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  extend FriendlyId
+
   has_many :authors_books
   has_many :authors, through: :authors_books
   belongs_to :category
@@ -10,7 +12,16 @@ class Book < ApplicationRecord
 
   mount_uploader :cover, CoverUploader
 
+  friendly_id :title, use: :slugged
 
+  rails_admin do
+    list do
+      field :id
+      field :title
+      field :category
+      field :authors
+    end
+  end
 
   def outside_authors
     Author.all - authors

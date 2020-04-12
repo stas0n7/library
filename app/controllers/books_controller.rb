@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
   before_action :set_book, only: %i[show edit update destroy add_author_page remove_author_page add_author remove_author]
 
   def index
@@ -57,7 +57,7 @@ class BooksController < ApplicationController
   private
 
     def set_book
-      @book = Book.find(params[:id])
+      @book = Book.friendly.find(params[:id])
     end
 
     def book_params
