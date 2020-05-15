@@ -13,12 +13,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.title %></td>
-        <td>
-          <% category.books.each do |book| %>
-            <%= book.title %>
-            <%= ', ' if book != category.books.last %>
-          <% end %>
-        </td>
+        <td><%= category.decorate.books_titles %></td>
         <td><%= link_to 'Show', category, class: 'btn btn-info' %></td>
         <% if can? :manage, Category %>
           <td><%= link_to 'Edit', edit_category_path(category), class: 'btn btn-primary' %></td>

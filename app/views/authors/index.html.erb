@@ -13,12 +13,7 @@
     <% @authors.each do |author| %>
       <tr>
         <td><%= author.name %></td>
-        <td>
-          <% author.books.each do |book| %>
-            <%= book.title %>
-            <%= ',' if book != author.books.last %>
-          <% end %>
-        </td>
+        <td><%= author.decorate.books_titles %></td>
         <td><%= link_to 'Show', author, class: 'btn btn-info' %></td>
           <% if can? :manage, Author %>
             <td><%= link_to 'Edit', edit_author_path(author), class: 'btn btn-primary' %></td>
