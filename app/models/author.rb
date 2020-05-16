@@ -20,4 +20,9 @@ class Author < ApplicationRecord
       field :books
     end
   end
+
+  def decorate
+    TitleDecorator.decorate(self)
+  end
+
 end

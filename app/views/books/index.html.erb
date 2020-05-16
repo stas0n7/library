@@ -16,12 +16,7 @@
       <tr>
         <td><%= image_tag book.cover_url(:small)%></td>
         <td><%= book.title %></td>
-        <td>
-          <% book.authors.each do |author| %>
-            <%= author.name %>
-            <%= ',' if author != book.authors.last %>
-          <% end %>
-        </td>
+        <td><%= book.authors_names %></td>
         <td><%= book.category&.title %></td>
         <td><%= link_to 'Show', book, class: 'btn btn-info' %></td>
           <% if can? :manage, Book %>

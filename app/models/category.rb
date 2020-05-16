@@ -9,4 +9,9 @@ class Category < ApplicationRecord
   def outside_books
     Book.all - books
   end
+
+  def decorate
+    TitleDecorator.decorate(self)
+  end
+
 end
